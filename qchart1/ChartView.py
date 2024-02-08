@@ -8,7 +8,7 @@ class ChartView(QChartView):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        series = QSplineSeries()
+        series = QSplineSeries() #linien
         series2 = QLineSeries()
 
         chart = QChart()
@@ -16,10 +16,10 @@ class ChartView(QChartView):
         chart.addSeries(series)
         chart.addSeries(series2)
 
-        axis_x = QValueAxis()
+        axis_x = QValueAxis() #Achsen
         axis_x.setRange(1, 4)
 
-        axis_y = QValueAxis()
+        axis_y = QValueAxis()# Achsen
         axis_y.setRange(0, 10)
 
         chart.addAxis(axis_x, Qt.AlignmentFlag.AlignTop)
@@ -36,7 +36,7 @@ class ChartView(QChartView):
         series.attachAxis(axis_x)
         series.attachAxis(axis_y)
 
-        series.setName("Parabel")
+        series.setName("Parabel") #werte für series
         series.append(0, 0)
         series.append(1, 1)
         series.append(2, 4)
@@ -44,12 +44,14 @@ class ChartView(QChartView):
         series.append(4, 16)
         series.append(5, 25)
 
-        series2.setName("Gerade")
+        series2.setName("Gerade") #werte für series
         series2.append(0, -5)
         series2.append(1, -2.5)
         series2.append(2, 0)
         series2.append(3, 2.5)
         series2.append(4, 5)
         series2.append(5, 7.5)
+
+        #zum Anziegen der Series
 
         self.setChart(chart)

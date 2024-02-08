@@ -17,9 +17,9 @@ class CentralWidget(QWidget):
 
         self.chartview = ChartView(parent) #für chartview zum Anzeigen
 
-        self.preise = Preise(parent)
+        self.preise = Preise(parent) #für preise zum Anzeigen
 
-        self.datetime = DateTime(parent)
+        self.datetime = DateTime(parent) #für datetime zum Anzeigen
         self.send_random.connect(self.datetime.add_random_value)
 
         self.slider = QSlider()

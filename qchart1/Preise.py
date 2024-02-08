@@ -37,12 +37,6 @@ class Preise(QChartView):
         self.series.attachAxis(axis_y)
         self.series1.attachAxis(axis_y)
 
-        self.series.attachAxis(axis_x)
-        self.series.attachAxis(axis_y)
-
-        self.series1.attachAxis(axis_x)
-        self.series1.attachAxis(axis_y)
-
         self.series.append(0, 0)
         self.series.append(2014, 3)
         self.series.append(2016,4)
