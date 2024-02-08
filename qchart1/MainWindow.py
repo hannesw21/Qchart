@@ -11,3 +11,5 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.central_widget)
 
         self.setWindowTitle("Einführung in QCharts")
+
+        self.central_widget.setMinimumWidth(300) #Breite des Fensters verändern
