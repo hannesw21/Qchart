@@ -4,6 +4,8 @@ from PyQt6.QtCore import QTimer, pyqtSlot, pyqtSignal
 from PyQt6.QtWidgets import QWidget, QSlider, QHBoxLayout, QGridLayout, QLabel
 
 from DateTime import DateTime
+from qchart1.ChartView import ChartView
+from qchart1.Preise import Preise
 
 
 class CentralWidget(QWidget):
@@ -11,6 +13,11 @@ class CentralWidget(QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
+
+
+        self.chartview = ChartView(parent) #für chartview zum Anzeigen
+
+        self.preise = Preise(parent)
 
         self.datetime = DateTime(parent)
         self.send_random.connect(self.datetime.add_random_value)
@@ -21,7 +28,7 @@ class CentralWidget(QWidget):
 
         layout = QHBoxLayout()
 
-        layout.addWidget(self.datetime)
+        layout.addWidget(self.preise) #wenn man chartview einfügt wird dieses angezeigt
         layout.addWidget(self.slider)
 
         self.setLayout(layout)

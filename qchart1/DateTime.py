@@ -6,6 +6,8 @@ from PyQt6.QtCore import Qt, QDateTime, pyqtSlot
 # https://github.com/chey00/qchart
 
 #mein github
+
+
 class DateTime(QChartView):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -32,6 +34,8 @@ class DateTime(QChartView):
 
         axis_y = QValueAxis()
         axis_y.setRange(-5, 5)
+        #axis_y.set
+
 
         self.chart.addAxis(self.date_time_axis, Qt.AlignmentFlag.AlignTop)
         self.chart.addAxis(axis_y, Qt.AlignmentFlag.AlignLeft)
